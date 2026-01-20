@@ -223,6 +223,14 @@ CreateThread(function()
         local veh = GetVehiclePedIsIn(ped, false)
         if veh == 0 then goto continue end
 
+        -- Only driver feels the crash / Seul le conducteur ressent le crash
+        if GetPedInVehicleSeat(veh, -1) ~= ped then
+            lastSpeedKmh = 0.0
+            lastBodyHealth = nil
+            lastDeform = nil
+            goto continue
+        end
+
         local speedKmh = toKmh(GetEntitySpeed(veh))
         local rawDelta = lastSpeedKmh - speedKmh
         if rawDelta < 0 then rawDelta = 0 end
