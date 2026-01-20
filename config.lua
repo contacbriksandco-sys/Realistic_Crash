@@ -95,8 +95,8 @@ Config.Blackout = {
     DurationMs = 1500,
 
     -- Partial veil / Voile partiel
-    MinAlpha = 60,
-    MaxAlpha = 185,
+    MinAlpha = 150,
+    MaxAlpha = 255,
 
     FadeInMs = 200,
     FadeOutMs = 420,
